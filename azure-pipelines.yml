@@ -30,7 +30,16 @@ stages:
 - stage: Push
   displayName: Push Image
   jobs:
-  - job: Login
-    displayNAme: Login to Dockerhub
-  - job: Push
-    displayName: Push Image to Hyukjun's Repository
+  - job: Login & Push
+    displayName: Login to Dockerhub
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'adoToDockerhub'
+        command: 'login'
+    - task: Docker@2
+      displayName: Push to Dockerhub
+      inputs:
+        containerRegistry: 'adoToDockerhub'
+        repository: 'python-docker'
+        command: 'push'

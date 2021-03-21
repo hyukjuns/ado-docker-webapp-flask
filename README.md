@@ -14,8 +14,8 @@
 - Spread in to html page
 
 ## Build & Deploy
-- Build: Dockerfile
-- Deploy to: Dockercompose & k8s
+- Build: Dockerfile & Dockercompose
+- Deploy to: k8s(AKS)
 
 ## CI/CD Pipeline
 - Github Actions

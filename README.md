@@ -16,7 +16,7 @@
 ## Build & Deploy
 - Build: Dockerfile & Dockercompose
 - Deploy to: Azure Webapps, k8s(AKS)
-- Pipeline 1(Azure webapps)
+- Pipeline 1 (Azure Webapps)
 ```
 source push & merge -> github -> trigger -> docker build -> push to dockerhub -> deploy to azure webapps 
 ```

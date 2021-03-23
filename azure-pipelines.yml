@@ -20,3 +20,9 @@ steps:
     Dockerfile: 'v2/Dockerfile'
     buildContext: 'v2'
     tags: '$(VERSION)'
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'deployToWebapp'
+    appName: 'hyukjun-webapps'
+    containers: 'hyukjun/webscrapper:$(VERSION)'
+    appSettings: '-WEBSITES_PORT 5000'

@@ -3,43 +3,18 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+- none
 
 resources:
 - repo: self
 
-variables:
-  tag: '$(Build.BuildId)'
-
 stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
-- stage: Push
-  displayName: Push Image
-  jobs:
-  - job: Login & Push
-    displayName: Login to Dockerhub
-    steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'adoToDockerhub'
-        command: 'login'
-    - task: Docker@2
-      displayName: Push to Dockerhub
-      inputs:
-        containerRegistry: 'adoToDockerhub'
-        repository: 'python-docker'
-        command: 'push'
+stage 1:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'adoToDockerhub'
+    repository: 'hyukjun/webscrapper'
+    command: 'buildAndPush'
+    Dockerfile: 'v2/Dockerfile'
+    buildContext: 'v2'
+    tags: '$(VERSION)'

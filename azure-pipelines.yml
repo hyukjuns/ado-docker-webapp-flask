@@ -8,8 +8,10 @@ trigger:
 resources:
 - repo: self
 
-stages:
-stage 1:
+pool:
+  vmImage: ubuntu-latest
+
+steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'adoToDockerhub'

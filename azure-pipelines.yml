@@ -22,7 +22,7 @@ steps:
     tags: '$(VERSION)'
 - task: AzureWebAppContainer@1
   inputs:
-    azureSubscription: 'deployToWebapp'
+    azureSubscription: 'adoToWebapp'
     appName: 'hyukjun-webapps'
     containers: 'hyukjun/webscrapper:$(VERSION)'
     appSettings: '-WEBSITES_PORT 5000'

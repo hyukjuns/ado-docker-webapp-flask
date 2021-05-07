@@ -23,6 +23,6 @@ steps:
 - task: AzureWebAppContainer@1
   inputs:
     azureSubscription: 'adoToWebapp'
-    appName: 'hyukjun-webapps'
+    appName: 'docker-wehapp'
     containers: 'hyukjun/webscrapper:$(VERSION)'
     appSettings: '-WEBSITES_PORT 5000'

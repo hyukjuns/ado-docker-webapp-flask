@@ -13,14 +13,13 @@
 - Scrapping every jobs in StackOverflow
 - Spread in to html page
 
-## Build & Deploy
-- Build: Dockerfile & Dockercompose
-- Deploy to: Azure Webapps, k8s(AKS)
-- Pipeline 1 (Azure Webapps)
-```
-source push & merge -> github -> trigger -> docker build -> push to dockerhub -> deploy to azure webapps 
-```
-
-## CI/CD Pipeline
+## CI/CD
+**CI**
+Source Integration with git and Build Dockerfile
+**CD**
+1. Delivery to Dockerhub and Deploy to Azure Webapp 
+2. Delivery to ECR and Deploy to EKS
+3. Delivery to ACR and Deploy to AKS
+**Pipeline Tool**
 - Github Actions
 - Azure DevOps

@@ -1,4 +1,5 @@
-# Web Scrapper By Python 🔎
+# Web Scrapper
+웹 스크래핑 웹앱
 ## Language & Framework 
 - Python 3.8.6
 - Flask 1.1.2

@@ -1,9 +1,10 @@
-# Web Scrapper
-웹 스크래핑 웹앱
-## Language & Framework 
-- Python 3.8.6
-- Flask 1.1.2
----
+# Flask Framework를 사용한 Web Application 개발과 Azure DevOps를 사용한 CI/CD 배포
+
+## Application Info
+## Job Info Scrapping Web Application
+### Language & Framework 
+- Lang: Python 3.8.6
+- Framework: Flask 1.1.2
 ### Version 1
 - Packages: requests, BeautifulSoup4, CSV
 - Scrapping python job information in StackOverflow and Indeed
@@ -15,13 +16,18 @@
 - Scrapping every jobs in StackOverflow
 - Spread in to html page
 ---
-## CI/CD
-### CI
-Source Integration with git and Build Dockerfile
-### CD
-1. Delivery to Dockerhub and Deploy to Azure Webapp 
-2. Delivery to ECR and Deploy to EKS
-3. Delivery to ACR and Deploy to AKS
-### Pipeline Tool
-- Github Actions
+## CI/CD Info
+### Platform
 - Azure DevOps
+    - CI/CD: Pipelines (azure-pipelines.yml)
+### CI
+1. Source Integration in github
+2. Build Dockerfile
+3. Push Image to Dockerhub
+### CD
+1. Deploy to Azure Webapp
+---
+## Server Info
+### Platform
+- Azure App Service
+    - Webapp for Container(Linux)

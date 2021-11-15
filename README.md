@@ -1,4 +1,4 @@
-# Flask Web Application 개발과 Azure DevOps를 사용한 CI/CD 배포
+# Develop Flask Web Application and CI/CD with Azure DevOps
 
 ## Application Info
 ## Job Info Scrapping Web Application

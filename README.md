@@ -1,5 +1,5 @@
-# Develop Flask Web Application and CI/CD with Azure DevOps
-
+# Develop Flask Web Application and CI in Azure DevOps
+[![Build Status](https://dev.azure.com/hyukjun/flask-demo/_apis/build/status/hyukjuns.flask-webapp-cicd-demo?branchName=master)](https://dev.azure.com/hyukjun/flask-demo/_build/latest?definitionId=32&branchName=master)
 ## Application Info
 ## Job Info Scrapping Web Application
 ### Language & Framework 
@@ -16,18 +16,11 @@
 - Scrapping every jobs in StackOverflow
 - Spread in to html page
 ---
-## CI/CD Info
+## CI Info
 ### Platform
 - Azure DevOps
-    - CI/CD: Pipelines (azure-pipelines.yml)
+    - CI Pipelines (azure-pipelines.yml)
 ### CI
 1. Source Integration in github
 2. Build Dockerfile
 3. Push Image to Dockerhub
-### CD
-1. Deploy to Azure Webapp
----
-## Server Info
-### Platform
-- Azure App Service
-    - Webapp for Container(Linux)

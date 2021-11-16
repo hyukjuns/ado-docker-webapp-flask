@@ -3,26 +3,31 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- none
+  - none
 
-resources:
-- repo: self
+variables:
+  dockerVersion: "20.10.7"
+  imageVersion: "2.0"
+  repository: "hyukjun/webscrapper"
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'adoToDockerhub'
-    repository: 'hyukjun/webscrapper'
-    command: 'buildAndPush'
-    Dockerfile: 'v2/Dockerfile'
-    buildContext: 'v2'
-    tags: '$(VERSION)'
-- task: AzureWebAppContainer@1
-  inputs:
-    azureSubscription: 'adoToWebapp'
-    appName: 'docker-wehapp'
-    containers: 'hyukjun/webscrapper:$(VERSION)'
-    appSettings: '-WEBSITES_PORT 5000'
+stages:
+  - stage: Build stage
+    displayName: Build and Deploy
+    jobs:
+      - job:
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+        - task: DockerInstaller@0
+          displayName: Docker Build and Push
+          inputs:
+            dockerVersion: $(dockerVersion)
+        - task: Docker@2
+          displayName: Docker Build and Push
+          inputs:
+            containerRegistry: 'adoToDockerhub'
+            repository: '$(repository)'
+            command: 'buildAndPush'
+            Dockerfile: 'v2/Dockerfile'
+            buildContext: 'v2'
+            tags: '$(imageVersion)'

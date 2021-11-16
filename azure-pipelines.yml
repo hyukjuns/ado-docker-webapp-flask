@@ -11,7 +11,7 @@ variables:
   repository: "hyukjun/webscrapper"
 
 stages:
-  - stage: Build stage
+  - stage: Build
     displayName: Build and Deploy
     jobs:
       - job:

@@ -9,7 +9,7 @@ apt install python3-venv
 ```
 2. 가상 환경 만들기
 ```
-python3 -m venv -venv
+python3 -m venv venv
 source .venv/bin/activate
 ```
 3. 비활성화
